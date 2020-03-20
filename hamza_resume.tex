@@ -1,0 +1,218 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fontawesome}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{}{Hamza Baig}{ \href{www.hamzais.me}{www.hamzais.me}\\
+ \href{mailto:mhabaig@uwaterloo.ca}{mhabaig@uwaterloo.ca}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Languages} 
+\location{Comfortable in:}
+Python \textbullet{}   Go  \textbullet{} Dockerfile \textbullet{} Bash \\
+\textbullet{} Powershell \textbullet{} C  \textbullet{} Javascript \\
+\location{Familiar with:}
+ Groovy \textbullet{} SQL
+\sectionsep
+
+
+\section{Tools} 
+\location{Comfortable in:}
+AWS S3/EC2 \textbullet{} Elasticsearch \textbullet{} Docker  \\
+Kubernetes \textbullet{} Prometheus \textbullet{} Grafana Helm \textbullet{} Snowplow \textbullet{} Jenkins \\
+ Datadog  \textbullet{} Git\\
+\location{Familiar with:}
+Terraform \textbullet{} Puppet   \\ 
+Ingress \textbullet{} Alertmanager \textbullet{} Airflow
+\sectionsep
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\subsection{Coursera}
+\textbf{Google Cloud Platform}
+
+\textbullet{} SRE: Measuring and Managing \\
+\hspace{0.7em} Reliability
+\sectionsep
+\subsection{University of Waterloo}
+\textbf{BASc. Computer Engineering 2022}
+
+\textbullet{} Data Structures and Algorithms \\
+\textbullet{} Systems Programming and Concurrency \\
+\textbullet{} Discrete Mathematics I \& II \\
+
+
+
+\sectionsep
+
+
+\section{Extracurriculars} 
+\textbullet{} Mentor at ENGHacks 2019 \\
+\textbullet{} First-year mentor for ECE Class of '23 \\
+\textbullet{} Elections Officer for ECE Society \\ 
+\hspace{0.7em}(Spring '19) 
+
+\sectionsep
+
+
+\section{Socials}
+\href{https://www.linkedin.com/in/mhabaig/}{\faLinkedinSquare \, : \custombold{in/mhabaig/}} \\
+\href{https://github.com/baighamza}{\faGithubSquare \,: \custombold{baighamza}} \\
+\href{http://www.hamzais.me/}{\faGlobe\,:\,\custombold{www.hamzais.me}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\runsubsection{The Globe and Mail}
+\descript{| SRE (DevOps) Intern - Sophi.io }
+\location{January 2020 - April 2020 | \faMapMarker \, Toronto, ON}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize} 
+\item Updated and deployed \textbf{Helm Charts} for \textbf{ingress} controllers and internal tools used by the development team for both staging and production environments
+\item Deployed an alerting system for monitoring API endpoints and disk usage  from \textbf{Elasticsearch} using \textbf{Grafana} and \textbf{PromQL} 
+\item Collaborated extensively with offshore team members in implementing \textbf{Jenkins} files for CI/CD pipelines used by multiple repositories within the organization 
+\item Implemented a feature that reduced time taken for \textbf{Keel} deployments to finish from hours to a couple of seconds by reallocating the resources needed to deploy the clusters
+\end{tightemize}
+\sectionsep
+\runsubsection{TextNow}
+\descript{| Backend SRE Intern }
+\location{May 2019 - August 2019 | \faMapMarker \, Waterloo, ON}
+\begin{tightemize} 
+\item Worked with open-sourced platforms (Grafana), in \textbf{Javascript} to implement a "Group-by" option for analyzing metrics from \textbf {DataDog}
+\item Developed an alerting system utilizing Slack API that constantly monitors incoming messages alerting users if a metric limit has been reached
+\item  Prevented \textbf{Puppet} runs from crashing repeatedly on production environments by patching a fix that increases the memory needed to run
+\end{tightemize}
+\sectionsep
+
+\runsubsection{WATOnomous}
+\descript{| Team Lead - Telemetry Subdivision }
+\location{August 2019 - December 2019 | \faMapMarker \, Waterloo, ON}
+\begin{tightemize}
+\item Lead a team of 5 students to monitor an autonomous vehicle's vitals like battery health and steering from the CAN interface using \textbf{Python} and \textbf{Bash}
+\item Drafted and finalized team's retrospectives and OKRs for both spring and fall 2019 terms.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Communications Research Centre}
+\descript{| Cloud Intern }
+\location{September 2018 - December 2018 | \faMapMarker \, Ottawa, ON}
+\begin{tightemize}
+\item Used \textbf{AWS} and \textbf{Azure} to develop and automate a program that determined idle virtual machines from active ones 
+\item Designed and implemented the program in \textbf{Python} and PowerShell, with data being stored in \textbf{Amazon S3} buckets and curated using  \textbf{SQL}
+\end{tightemize}
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\vspace{0.5em}
+\runsubsection{Gompile}{\href{https://github.com/baighamza/go}{{\faGithub}}
+\descript{Go}
+\begin{tightemize}
+\item Developing compiler for a fictional language in \textbf{Go}
+\item Project consists of two parts, a lexer and tokenizer both being used to recognize and organize the different characters of the language
+\end{tightemize}
+\sectionsep
+\runsubsection{Cat Classifier}{\href{https://www.tensorflow.org/tfx/serving/serving_kubernetes}{{\faCode}}
+\descript{Kubernetes, Docker}
+\begin{tightemize}
+\item Used Tensorflow serving components to run in a \textbf{Docker} container 
+\item Project was deployed in \textbf{Kubernetes} to classify images of cats 
+\end{tightemize}
+\sectionsep
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
